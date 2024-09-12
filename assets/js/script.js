@@ -142,6 +142,14 @@ incrementValue.addEventListener("change", checkValue);
 resetSettingsButton.addEventListener("click", resetSettings);
 displaySettingsButton.addEventListener("click", setVisibilitySettings);
 
+// dblclick preventDefault
+const buttons = document.querySelectorAll("button");
+for (let btn of buttons) {
+    btn.addEventListener("dblclick", e => {
+        e.preventDefault();
+    })
+}
+
 
 let result = Number(document.querySelector("#start-value").value);
 
@@ -244,12 +252,4 @@ function setVisibilitySettings() {
         document.querySelector("#display-settings-button").classList.remove("displaySettingsButtonOn");       
         document.querySelector("#display-settings-button").classList.add("displaySettingsButton");     
     }
-}
-
-// dblclick preventDefault
-const buttons = document.querySelectorAll("button");
-for (let btn of buttons) {
-    btn.addEventListener("dblclick", e => {
-        e.preventDefault();
-    })
 }
