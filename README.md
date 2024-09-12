@@ -8,6 +8,8 @@ _COUNTER_ is a JavaScript application that works as a counter, it consists of th
 -   _buttons section_ contains buttons that change the value of the counter;
 -   _settings section_ allows to manage the application parameters, giving the user the opportunity to set personalized values.
 
+<p align="center"><img src="assets/img/overview.gif" alt="COUNTER" width="250px"></p>
+
 ## Buttons section
 
 In the buttons section there are four buttons:
@@ -27,4 +29,8 @@ In the settings section there are the following values:
 -   _decrease value_ sets the value that decrements the counter. By default is 1;
 -   _increment value_ sets the value that increments the counter. By default is 1.
 
-At the bottom of the section there is the -reset button- which returns the values ​​to their default value
+At the bottom of the section there is the reset button which returns the values ​​to their default value.
+
+## Try it!
+
+You can try the application <a href="https://helpful-hotteok-93d7ed.netlify.app/">here</a>.
