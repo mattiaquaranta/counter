@@ -33,4 +33,4 @@ At the bottom of the section there is the reset button which returns the values 
 
 ## Try it!
 
-You can try the application <a href="https://helpful-hotteok-93d7ed.netlify.app/">here</a>.
+You can try the application <a href="https://helpful-hotteok-93d7ed.netlify.app/" target="_blank">here</a>.

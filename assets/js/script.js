@@ -245,3 +245,11 @@ function setVisibilitySettings() {
         document.querySelector("#display-settings-button").classList.add("displaySettingsButton");     
     }
 }
+
+// dblclick preventDefault
+const buttons = document.querySelectorAll("button");
+for (let btn of buttons) {
+    btn.addEventListener("dblclick", e => {
+        e.preventDefault();
+    })
+}
