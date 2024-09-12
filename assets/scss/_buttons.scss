@@ -1,0 +1,74 @@
+.mainButton {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-color: $button-color;
+    box-shadow: 0px 0px 3px 3px $shadow-button-color;
+    border: none;
+
+    &:active {
+        box-shadow: 0px 0px 3px 3px $shadow-button-color inset;
+    }
+}
+
+.minusButton {
+    @extend .mainButton;
+    background-image: url("/assets/img/minus.png");
+     
+}
+
+.plusButton {
+    @extend .mainButton;
+    background-image: url("/assets/img/plus.png");
+}
+
+.randomButton {
+    @extend .mainButton;
+    background-image: url("/assets/img/random.png");
+}
+
+.resetButton {
+    @extend .mainButton;
+    background-image: url("/assets/img/reset.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.settingsButton {
+    cursor: pointer;
+    height: 25px;
+    border: none;
+}
+
+.displaySettingsButton {
+    @extend .settingsButton;
+    width: 25px;
+    background-size: cover;
+    background-color: transparent;
+    background-image: url("/assets/img/settings.svg");
+    position: absolute;
+    right: 0;
+    bottom: 0; 
+    animation-name: rotateOff;    
+    animation-duration: 1s;
+}
+
+.displaySettingsButtonOn {
+    @extend .displaySettingsButton;
+    animation-name: rotateOn;    
+    animation-duration: 1s;
+}
+
+.resetSettingsButton {
+    @extend .settingsButton;
+    width: 100px;
+    background-color: $button-color;
+    color: $button-text-color;
+    font-family: inherit;    
+
+    &:active{
+        color: $button-color;
+        background-color: $button-text-color;
+    }
+}

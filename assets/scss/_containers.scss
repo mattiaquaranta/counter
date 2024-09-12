@@ -1,0 +1,66 @@
+.container {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.mainContainer {
+    @extend .container;
+    flex-direction: column;
+    height: 100%;    
+    background-clip: content-box, padding-box;
+    background-image: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%), linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
+    z-index: 0;
+}
+
+.resultContainer {
+    @extend .container;
+    justify-content: end;
+    height: 20%;
+    font-family: $result-font, sans-serif;
+    font-size: 75px;
+    background-color: $result-color;
+    z-index: 2;
+}
+
+.buttonsContainer {
+    @extend .container;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 60%;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 10px $shadow-container-color inset, 0px 0px 10px $shadow-container-color inset; 
+    position: relative;
+    z-index: 2;  
+}
+
+.settingsContainer {
+    @extend .container;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 20%;
+    font-family: $settings-font, sans-serif;
+    font-size: 12px;    
+    overflow-y: scroll;
+    position: relative;
+    z-index: 1;
+    transform: translateY(0%);    
+    animation-name: slideIn;
+    animation-duration: 1s;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.settingsContainerHidden {
+    @extend .settingsContainer;
+    transform: translateY(-100%);
+    animation-name: slideOut;
+}
+
+.resetSettingsButtonContainer{
+    @extend .container;
+    justify-content: center;
+}

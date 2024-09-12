@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Handjet';
+    src: url('/assets/font/Handjet-VariableFont_ELGR\,ELSH\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('/assets/font/Ubuntu-Regular.ttf');
+
+}
+
+$result-font: Handjet;
+$settings-font: Ubuntu;
+
+$primary-color: rgba(253, 138, 50, 1);
+$secondary-color: rgba(255, 111, 0, 1);
+$result-color: rgba(255, 255, 255, 0.5);
+$shadow-container-color: rgba(0, 0, 0, .1);
+$shadow-button-color: rgba(0, 0, 0, .5);
+$button-color: rgb(232, 230, 230);
+$button-text-color: red;

@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "Handjet";
+  src: url("/assets/font/Handjet-VariableFont_ELGR,ELSH,wght.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/assets/font/Ubuntu-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+body {
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container, .resetSettingsButtonContainer, .settingsContainer, .settingsContainerHidden, .buttonsContainer, .resultContainer, .mainContainer {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.mainContainer {
+  flex-direction: column;
+  height: 100%;
+  background-clip: content-box, padding-box;
+  background-image: linear-gradient(to bottom, rgb(253, 138, 50) 0%, rgb(253, 138, 50) 100%), linear-gradient(to bottom, rgb(255, 111, 0) 0%, rgb(255, 111, 0) 100%);
+  z-index: 0;
+}
+
+.resultContainer {
+  justify-content: end;
+  height: 20%;
+  font-family: Handjet, sans-serif;
+  font-size: 75px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.buttonsContainer {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 60%;
+  background-color: rgb(253, 138, 50);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) inset, 0px 0px 10px rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+  z-index: 2;
+}
+
+.settingsContainer, .settingsContainerHidden {
+  justify-content: start;
+  flex-wrap: wrap;
+  height: 20%;
+  font-family: Ubuntu, sans-serif;
+  font-size: 12px;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 1;
+  transform: translateY(0%);
+  animation-name: slideIn;
+  animation-duration: 1s;
+}
+.settingsContainer::-webkit-scrollbar, .settingsContainerHidden::-webkit-scrollbar {
+  display: none;
+}
+
+.settingsContainerHidden {
+  transform: translateY(-100%);
+  animation-name: slideOut;
+}
+
+.resetSettingsButtonContainer {
+  justify-content: center;
+}
+
+.mainButton, .resetButton, .randomButton, .plusButton, .minusButton {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-color: rgb(232, 230, 230);
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+.mainButton:active, .resetButton:active, .randomButton:active, .plusButton:active, .minusButton:active {
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+.minusButton {
+  background-image: url("/assets/img/minus.png");
+}
+
+.plusButton {
+  background-image: url("/assets/img/plus.png");
+}
+
+.randomButton {
+  background-image: url("/assets/img/random.png");
+}
+
+.resetButton {
+  background-image: url("/assets/img/reset.png");
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.settingsButton, .resetSettingsButton, .displaySettingsButton, .displaySettingsButtonOn {
+  cursor: pointer;
+  height: 25px;
+  border: none;
+}
+
+.displaySettingsButton, .displaySettingsButtonOn {
+  width: 25px;
+  background-size: cover;
+  background-color: transparent;
+  background-image: url("/assets/img/settings.svg");
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation-name: rotateOff;
+  animation-duration: 1s;
+}
+
+.displaySettingsButtonOn {
+  animation-name: rotateOn;
+  animation-duration: 1s;
+}
+
+.resetSettingsButton {
+  width: 100px;
+  background-color: rgb(232, 230, 230);
+  color: red;
+  font-family: inherit;
+}
+.resetSettingsButton:active {
+  color: rgb(232, 230, 230);
+  background-color: red;
+}
+
+input {
+  width: 70px;
+  height: 2em;
+  font-family: inherit;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+label {
+  width: 100px;
+  text-align: left;
+  margin-right: 10px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes rotateOn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotateOff {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
